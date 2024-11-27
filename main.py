@@ -8,6 +8,40 @@ import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
+# Autenticación con contraseña
+def check_password():
+    def password_entered():
+        if st.session_state["password"] == "tec1792#":
+            st.session_state["password_correct"] = True
+            del st.session_state["password"]  # Elimina la contraseña después de verificar
+        else:
+            st.session_state["password_correct"] = False
+
+    if "password_correct" not in st.session_state:
+        # Solicitar la contraseña
+        st.text_input(
+            "Introduce la contraseña:",
+            type="password",
+            on_change=password_entered,
+            key="password",
+        )
+        return False
+    elif not st.session_state["password_correct"]:
+        st.text_input(
+            "Introduce la contraseña:",
+            type="password",
+            on_change=password_entered,
+            key="password",
+        )
+        st.error("Contraseña incorrecta")
+        return False
+    else:
+        return True
+
+# Llamar a la función de autenticación
+if not check_password():
+    st.stop()
+
 # Configuración de la página
 st.set_page_config(
     page_title="Comportamiento MC4",
