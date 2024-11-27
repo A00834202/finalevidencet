@@ -206,7 +206,7 @@ with grid:
         furnace_counts = dataset.groupby('Furnace')['ID'].count()
         total_count = furnace_counts.sum()
         percentages = (furnace_counts / total_count * 100).round(2)
-        labels = [f"Horno {int(furnace)}" for furnace in furnace_counts.index]
+        labels = [f"Horno {furnace}" for furnace in furnace_counts.index]
         plt.figure(figsize=(10, 6))
         bars = plt.bar(labels, furnace_counts.values, color="#01345e")
 
