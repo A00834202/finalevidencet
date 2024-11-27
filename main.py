@@ -104,6 +104,7 @@ plan_demorados = filtered_dataset.shape[0]
 total_demoras = demoras_filtro.shape[0]
 
 # Inserta estilos CSS personalizados para las métricas
+# Inserta estilos CSS personalizados para las métricas
 st.markdown(
     """
     <style>
@@ -160,7 +161,6 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
-
 
 
 
