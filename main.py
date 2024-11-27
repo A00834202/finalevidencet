@@ -101,7 +101,7 @@ with header:
     with col1:
         st.title("COMPORTAMIENTO MC4")
     with col2:
-        st.image("Ternium_logo.svg.png", width=320)  # Cambia la ruta a tu logotipo
+        st.image("logo.svg.png", width=320)  # Cambia la ruta a tu logotipo
 
 # Sidebar para filtros
 st.sidebar.header("Filtros")
