@@ -103,72 +103,40 @@ prod_realizada = prod_filtro['Prod_real'].sum()
 plan_demorados = filtered_dataset.shape[0]
 total_demoras = demoras_filtro.shape[0]
 
-# st.markdown(
-#     """
-#     <style>
-#     .metric-container {
-#         background-color: #f0f0f0; /* Color de fondo de la franja */
-#         padding: 20px; /* Espaciado interno */
-#         border-radius: 10px; /* Bordes redondeados */
-#         margin-bottom: 20px; /* Espacio debajo de la franja */
-#         display: flex; /* Alinea los elementos horizontalmente */
-#         justify-content: space-around; /* Espacio uniforme entre métricas */
-#         align-items: center; /* Centra verticalmente las métricas */
-#     }
-#     .metric {
-#         text-align: center; /* Centra el texto */
-#     }
-#     </style>
-#     """,
-#     unsafe_allow_html=True,
-# )
-
-# # Contenedor para las métricas
-# st.markdown('<div class="metric-container">', unsafe_allow_html=True)
-# col1, col2, col3, col4 = st.columns(4)
-# col1.metric("Producción Esperada", f"{prod_esperada/ 1_000:.1f}k")
-# col2.metric("Producción Realizada", f"{prod_realizada/ 1_000:.1f}k")
-# col3.metric("Planchones Demorados", f"{plan_demorados/ 1_000:.1f}k")
-# col4.metric("Paradas / Interrupciones", f"{total_demoras}")
-# st.markdown('</div>', unsafe_allow_html=True)
-
-# Inserta estilos CSS personalizados
+# Inserta estilos CSS personalizados para las métricas
 st.markdown(
     """
     <style>
     .metric-container {
-        background-color: #63656a; /* Fondo gris oscuro */
-        padding: 20px; /* Reducir espaciado interno */
-        border-radius: 10px; /* Bordes redondeados */
-        margin-bottom: 20px; /* Espacio debajo de la franja */
-        display: flex; /* Alineación horizontal */
+        display: flex; /* Alinea elementos en fila */
         justify-content: space-around; /* Espacio uniforme entre métricas */
-        align-items: center; /* Centrar verticalmente */
-        color: white; /* Texto blanco */
-        width: 100%; /* Ocupa todo el ancho disponible */
-        box-sizing: border-box; /* Considera el padding al calcular el ancho */
-        gap: 20px; /* Espaciado entre métricas */
+        align-items: center; /* Centra verticalmente los elementos */
+        background-color: #f9f9f9; /* Fondo claro */
+        padding: 20px; /* Espaciado interno */
+        border-radius: 10px; /* Bordes redondeados */
+        margin-bottom: 20px; /* Separación inferior */
     }
     .metric {
-        text-align: center; /* Centrar el contenido de cada métrica */
+        text-align: center; /* Centra texto y números */
+        font-family: 'Arial', sans-serif; /* Fuente estándar */
     }
     .metric .value {
         font-size: 36px; /* Tamaño grande para los valores */
-        font-weight: bold;
-        color: white; /* Valores en blanco */
-        margin: 0;
+        font-weight: bold; /* Números en negrita */
+        color: #333333; /* Color oscuro para números */
+        margin: 0; /* Sin márgenes */
     }
     .metric .label {
         font-size: 16px; /* Tamaño mediano para etiquetas */
-        color: #d0d0d0; /* Títulos en gris claro */
-        margin: 0;
+        color: #666666; /* Color gris para etiquetas */
+        margin-top: 5px; /* Espaciado entre número y etiqueta */
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-# Contenedor para las métricas
+# Contenedor de métricas
 st.markdown('<div class="metric-container">', unsafe_allow_html=True)
 
 # Añade métricas dinámicas
@@ -192,6 +160,7 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
